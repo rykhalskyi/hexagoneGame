@@ -1,0 +1,125 @@
+
+.hexagon {
+  height: 109px;
+  width: 190px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hexagon:before,
+.hexagon:after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+}
+
+.hexagon:before{
+  transform: rotate(60deg);
+}
+.hexagon:after{
+  transform: rotate(-60deg);
+}
+
+.hexagon,
+.hexagon:before,
+.hexagon:after
+{
+  background: rgba(128, 30, 30, 64);
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+
+.line{
+  height: 220px;
+  width: 2px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.line:before,
+.line:after
+{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+}
+
+.line:before
+{
+  transform: rotate(60deg);
+}
+
+.line:after
+{
+  transform: rotate(-60deg);
+}
+
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transform: rotate(30deg); */
+}
+
+.smallhexagon {
+  height: 54px;
+  width: 95px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.smallhexagon:before,
+.smallhexagon:after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+}
+
+.smallhexagon:before{
+  transform: rotate(60deg);
+}
+.smallhexagon:after{
+  transform: rotate(-60deg);
+}
+
+.smallhexagon,
+.smallhexagon:before,
+.smallhexagon:after
+{
+  background: rgba(128, 30, 30, 64);;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+
+.buttons{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+path {
+  fill : #fff2;
+}
+
+
+path:hover {
+  fill: #fff6;
+}

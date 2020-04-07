@@ -1,0 +1,41 @@
+.hexagon1{
+position: relative;
+top: 0px;
+left: 0px;
+}
+
+.hexagon2{
+  position: relative;
+  top: 195px;
+  left: 0px;
+}
+
+.hexagon3{
+  position: relative;
+  top: -195px;
+  left: 0px;
+}
+
+.hexagon4{
+  position: relative;
+  top: 98px;
+  left: -169px;
+}
+
+.hexagon5{
+  position: relative;
+  top: -97px;
+  left: -169px;
+}
+
+.hexagon6{
+  position: relative;
+  top: 98px;
+  left: 169px;
+}
+
+.hexagon7{
+  position: relative;
+  top: -97px;
+  left: 169px;
+}
