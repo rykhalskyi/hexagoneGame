@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hexagon',
@@ -6,10 +6,14 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./hexagon.component.css']
 })
 export class HexagonComponent implements OnInit {
+@Input() color: string;
+  title = "hexagon";
 
-  title = "hexagon"
+  constructor() {
+    this.color = "#a60709";
+    console.log("Hex constructor");
 
-  constructor() {console.log("Hex constructor"); }
+  }
 
   ngOnInit(): void {
   }

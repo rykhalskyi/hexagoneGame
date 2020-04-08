@@ -1,9 +1,9 @@
 <div class = "container">
-  <div class="hexagon"></div>
+  <div class="hexagon" ></div>
   <div class="line"></div>
   <div class="smallhexagon"></div>
 
-  <div class="buttons">
+   <div class="buttons">
     <svg height="220" width="200">
       <path (click)="onMouseUp(1)" d="M 4 58
       L 100 0
@@ -25,8 +25,42 @@
     L 196 168
     L 100 222
     Z"/>
+    <path (click)="onMouseUp(5)" d="M 52 138
+    L 100 169
+    L 100 222
+    L 4 166
+    Z"/>
+    <path (click)="onMouseUp(6)" d="M 4 58
+    L 52 85
+    L 52 138
+    L 4 166
+    Z"/>
   </svg>
   </div>
+
+<div class="bgHex" >
+  <svg height="220" width="200">
+    <path class="bgPath" [ngStyle]="{'fill': color}" d="M 4 58
+    L 100 0
+    L 196 58
+    L 196 165
+    L 100 223
+    L 4 166
+    Z" fill="#00f"/>
+  </svg>
+</div>
+
+<div class="smHex" >
+  <svg height="220" width="200">
+    <path [ngStyle]="{'fill': color}" d="M 52 85
+    L 100 58
+    L 150 85
+    L 149 139
+    L 100 169
+    L 52 138
+    Z" fill="#00f"/>
+  </svg>
+</div>
 
 </div>
 

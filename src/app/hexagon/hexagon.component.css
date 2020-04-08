@@ -2,11 +2,12 @@
 .hexagon {
   height: 109px;
   width: 190px;
-  background: #fff;
+  background-color: transparent;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 5;
 }
 
 .hexagon:before,
@@ -14,7 +15,6 @@
   content: '';
   width: 100%;
   height: 100%;
-  background: #fff;
   position: absolute;
 }
 
@@ -29,7 +29,6 @@
 .hexagon:before,
 .hexagon:after
 {
-  background: rgba(128, 30, 30, 64);
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
 }
@@ -42,6 +41,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 3;
 }
 
 .line:before,
@@ -52,6 +52,7 @@
   height: 100%;
   background: #fff;
   position: absolute;
+  z-index: 3;
 }
 
 .line:before
@@ -69,17 +70,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* transform: rotate(30deg); */
+  transform: rotate(30deg);
 }
 
 .smallhexagon {
   height: 54px;
   width: 95px;
-  background: #fff;
+  background: transparent;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 7;
 }
 
 .smallhexagon:before,
@@ -87,7 +89,7 @@
   content: '';
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: transparent;
   position: absolute;
 }
 
@@ -102,7 +104,7 @@
 .smallhexagon:before,
 .smallhexagon:after
 {
-  background: rgba(128, 30, 30, 64);;
+  background: transparent;
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
 }
@@ -112,14 +114,33 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 6;
 }
 
 path {
   fill : #fff2;
 }
 
-
 path:hover {
   fill: #fff6;
+}
+
+.bgHex{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.smHex{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.bgPath {
+  stroke: transparent;
+}
+
+.bgPath:hover {
+  fill : #f00;
 }
