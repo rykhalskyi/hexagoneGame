@@ -3,8 +3,25 @@
   <div class="line"></div>
   <div class="smallhexagon"></div>
 
+
+  <!-- <div class="tockens">
+    <svg height="220" width="200">
+      <circle cx="30" cy="30" r="25" fill="#fff"/>
+    </svg>
+  </div> -->
+
    <div class="buttons">
     <svg height="220" width="200">
+      <circle cx="63" cy="50" r="21" [ngStyle]="{'fill':tockenFill[0]}"/>
+      <circle cx="137" cy="50" r="21" [ngStyle]="{'fill':tockenFill[1]}"/>
+      <circle cx="172" cy="110" r="21" [ngStyle]="{'fill':tockenFill[2]}"/>
+      <circle cx="137" cy="173" r="21" [ngStyle]="{'fill':tockenFill[3]}"/>
+      <circle cx="63" cy="173" r="21" [ngStyle]="{'fill':tockenFill[0]}"/>
+      <circle cx="28" cy="110" r="21" [ngStyle]="{'fill':tockenFill[1]}"/>
+
+      <text x="63" y="50" transform="rotate(-30, 75,60)" [ngStyle]="{'fill':tockenTextFill[0]}">+1</text>
+      <text x="137" y="50" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[1]}">+2</text>
+
       <path (click)="onMouseUp(1)" d="M 4 58
       L 100 0
       L 100 58
@@ -15,35 +32,37 @@
       L 150 85
       L 100 58
       Z"/>
-    <path (click)="onMouseUp(3)" d="M 149 85
-    L 196 58
-    L 196 168
-    L 149 139
-    Z"/>
-    <path (click)="onMouseUp(4)" d="M 100 169
-    L 149 139
-    L 196 168
-    L 100 222
-    Z"/>
-    <path (click)="onMouseUp(5)" d="M 52 138
-    L 100 169
-    L 100 222
-    L 4 166
-    Z"/>
-    <path (click)="onMouseUp(6)" d="M 4 58
-    L 52 85
-    L 52 138
-    L 4 166
-    Z"/>
+      <path (click)="onMouseUp(3)" d="M 149 85
+      L 196 58
+      L 196 168
+      L 149 139
+      Z"/>
+      <path (click)="onMouseUp(4)" d="M 100 169
+      L 149 139
+      L 196 168
+      L 100 222
+      Z"/>
+      <path (click)="onMouseUp(5)" d="M 52 138
+      L 100 169
+      L 100 222
+      L 4 166
+      Z"/>
+      <path (click)="onMouseUp(6)" d="M 4 58
+      L 52 85
+      L 52 138
+      L 4 166
+      Z"/>
+
   </svg>
   </div>
+
 
 <div class="bgHex" >
   <svg height="220" width="200">
     <path class="bgPath" [ngStyle]="{'fill': color}" d="M 4 58
     L 100 0
     L 196 58
-    L 196 165
+    L 196 166
     L 100 223
     L 4 166
     Z" fill="#00f"/>
