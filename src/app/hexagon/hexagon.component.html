@@ -19,8 +19,26 @@
       <circle cx="63" cy="173" r="21" [ngStyle]="{'fill':tockenFill[0]}"/>
       <circle cx="28" cy="110" r="21" [ngStyle]="{'fill':tockenFill[1]}"/>
 
-      <text x="63" y="50" transform="rotate(-30, 75,60)" [ngStyle]="{'fill':tockenTextFill[0]}">+1</text>
-      <text x="137" y="50" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[1]}">+2</text>
+      <text x="60" y="43" transform="rotate(-30, 75,60)" [ngStyle]="{'fill':tockenTextFill[0]}">{{tockenValue[0][0]}}</text>
+      <text x="60" y="57" transform="rotate(-30, 75,60)" [ngStyle]="{'fill':tockenTextFill[0]}">{{tockenValue[0][1]}}</text>
+
+      <text x="135" y="43" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[1]}">{{tockenValue[1][0]}}</text>
+      <text x="135" y="57" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[1]}">{{tockenValue[1][1]}}</text>
+
+      <text x="135" y="112" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[2]}">{{tockenValue[2][0]}}</text>
+      <text x="135" y="127" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[2]}">{{tockenValue[2][1]}}</text>
+
+      <text x="73" y="147" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[3]}">{{tockenValue[3][0]}}</text>
+      <text x="73" y="162" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[3]}">{{tockenValue[3][1]}}</text>
+
+      <text x="10" y="112" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[4]}">{{tockenValue[4][0]}}</text>
+      <text x="10" y="127" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[4]}">{{tockenValue[4][1]}}</text>
+
+      <text x="8" y="43" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[5]}">{{tockenValue[5][0]}}</text>
+      <text x="8" y="57" transform="rotate(-30,153,65)" [ngStyle]="{'fill':tockenTextFill[5]}">{{tockenValue[5][1]}}</text>
+
+      <text font-size="26" x="65" y="75" transform="rotate(-30,153,65)" fill="#000" >{{value[0]}}</text>
+      <text font-size="26" x="65" y="100" transform="rotate(-30,153,65)" fill="#000">{{value[1]}}</text>
 
       <path (click)="onMouseUp(1)" d="M 4 58
       L 100 0
