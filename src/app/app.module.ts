@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HexagonComponent } from './hexagon/hexagon.component';
 import { PlayfieldComponent } from './playfield/playfield.component';
+import { PlayerDashboardComponent } from './player-dashboard/player-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HexagonComponent,
-    PlayfieldComponent
+    PlayfieldComponent,
+    PlayerDashboardComponent
   ],
   imports: [
     BrowserModule,
