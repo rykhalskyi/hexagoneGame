@@ -17,12 +17,20 @@ export class PlayerDashboardComponent implements OnInit {
  silver : number = 0;
  bronze : number = 0;
 
+ border : string = '0px';
+
  @Input("model")
  set model(value: Player)
  {
    this._model = value;
 
    this.Refresh();
+ }
+
+ @Input("active")
+ set active(value: boolean)
+ {
+    this.border = value ? '2px' : '0px';
  }
 
   constructor() { }
