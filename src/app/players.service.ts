@@ -8,7 +8,7 @@ import { Observable, of } from 'rxjs';
 export class PlayersService {
 
   playerOne: Player = {name : 'Jaro',
-  color:'#ddd',
+  color:'#ccc',
   resources : [0,0,0,0,0,0,0],
   gold : 0,
   silver : 0,

@@ -1,0 +1,17 @@
+table {
+  width: 90px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 50px;
+}
+
+.keyresource {
+  height: 40px;
+  width: 40px;
+}
+
+.resource {
+  height: 20px;
+  width: 30px;
+}

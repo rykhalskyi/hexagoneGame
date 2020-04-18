@@ -7,6 +7,7 @@ import { HexagonComponent } from './hexagon/hexagon.component';
 import { PlayfieldComponent } from './playfield/playfield.component';
 import { PlayerDashboardComponent } from './player-dashboard/player-dashboard.component';
 import { PlayersComponent } from './players/players.component';
+import { ActivePlayerComponent } from './active-player/active-player.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PlayersComponent } from './players/players.component';
     HexagonComponent,
     PlayfieldComponent,
     PlayerDashboardComponent,
-    PlayersComponent
+    PlayersComponent,
+    ActivePlayerComponent
   ],
   imports: [
     BrowserModule,
