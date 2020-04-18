@@ -1,17 +1,16 @@
 table {
-  width: 90px;
+  width: 150px;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
   left: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .keyresource {
   height: 40px;
-  width: 40px;
 }
 
 .resource {
   height: 20px;
-  width: 30px;
 }
