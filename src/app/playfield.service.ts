@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Hexagon } from './hexagon';
 import { Observable, of } from 'rxjs';
+import {Resource, ResourceColors} from './resource'
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class PlayfieldService {
 
  private red : Hexagon = {
     index : 0,
-    color : '#eb0008',
+    color : ResourceColors[Resource.Red],
     sectors : [],
     defaultSectorAttack : 1,
     defaultSectorDefence : 1
@@ -17,7 +18,7 @@ export class PlayfieldService {
 
    private orange : Hexagon = {
      index : 1,
-     color : '#ff9d00',
+     color : ResourceColors[Resource.Orange],
      sectors : [],
      defaultSectorAttack : 1,
      defaultSectorDefence : 1
@@ -25,7 +26,7 @@ export class PlayfieldService {
 
     private yellow : Hexagon = {
      index : 2,
-     color : '#ffea00',
+     color : ResourceColors[Resource.Yellow],
      sectors : [],
      defaultSectorAttack : 1,
      defaultSectorDefence : 1
@@ -33,7 +34,7 @@ export class PlayfieldService {
 
     private green : Hexagon = {
      index : 3,
-     color : '#00c403',
+     color : ResourceColors[Resource.Green],
      sectors : [],
      defaultSectorAttack : 1,
      defaultSectorDefence : 1
@@ -41,7 +42,7 @@ export class PlayfieldService {
 
     private blue : Hexagon = {
      index : 4,
-     color : '#00e0d5',
+     color : ResourceColors[Resource.Blue],
      sectors : [],
      defaultSectorAttack : 1,
      defaultSectorDefence : 1
@@ -49,7 +50,7 @@ export class PlayfieldService {
 
     private navy : Hexagon = {
      index : 5,
-     color : '#171ae3',
+     color : ResourceColors[Resource.Navy],
      sectors : [],
      defaultSectorAttack : 1,
      defaultSectorDefence : 1
@@ -57,7 +58,7 @@ export class PlayfieldService {
 
     private violet : Hexagon = {
      index : 6,
-     color : '#9600ed',
+     color : ResourceColors[Resource.Violet],
      sectors : [],
      defaultSectorAttack : 1,
      defaultSectorDefence : 1
