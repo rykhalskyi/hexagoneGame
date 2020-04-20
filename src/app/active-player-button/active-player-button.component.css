@@ -1,0 +1,25 @@
+.uplayer{
+  background-color:transparent;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 12%;
+  z-index: 3;
+}
+
+.uplayer:hover{
+  background-color: #fff9;
+  z-index: 3;
+}
+
+.downlayer {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 12%;
+  z-index: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+}

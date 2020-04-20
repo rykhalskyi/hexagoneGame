@@ -8,6 +8,7 @@ import { PlayfieldComponent } from './playfield/playfield.component';
 import { PlayerDashboardComponent } from './player-dashboard/player-dashboard.component';
 import { PlayersComponent } from './players/players.component';
 import { ActivePlayerComponent } from './active-player/active-player.component';
+import { ActivePlayerButtonComponent } from './active-player-button/active-player-button.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ActivePlayerComponent } from './active-player/active-player.component';
     PlayfieldComponent,
     PlayerDashboardComponent,
     PlayersComponent,
-    ActivePlayerComponent
+    ActivePlayerComponent,
+    ActivePlayerButtonComponent
   ],
   imports: [
     BrowserModule,
