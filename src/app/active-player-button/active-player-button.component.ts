@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-active-player-button',
@@ -11,9 +11,14 @@ export class ActivePlayerButtonComponent implements OnInit {
   @Input() height: string = '40px';
   @Input() radius: string = '12%';
 
+  @Output() buttonclick : EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onMouseUp() : void{
+    this.buttonclick.emit(this.color);
+  }
 }

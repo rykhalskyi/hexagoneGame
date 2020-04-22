@@ -1,5 +1,4 @@
-<table>
-
+<table style="display : {{visibility}}">
   <tr class="resource">
     <td [ngStyle]="{'background': '#ccc'}" align="center" colspan="2">Jaro </td>
   </tr>
@@ -8,36 +7,36 @@
     <td></td>
   </tr>
   <tr class="keyresource">
-    <td> <app-active-player-button color="red"></app-active-player-button></td>
-    <td class="value">3</td>
+    <td> <app-active-player-button color={{colors[0]}}></app-active-player-button></td>
+    <td class="value">{{values[0]}}</td>
   </tr>
   <tr class="keyresource">
-    <td ><app-active-player-button color="orange"></app-active-player-button></td>
-    <td class="value">13</td>
+    <td ><app-active-player-button color={{colors[1]}}></app-active-player-button></td>
+    <td class="value">{{values[1]}}</td>
   </tr>
   <tr class="keyresource">
-    <td ><app-active-player-button color="yellow"></app-active-player-button></td>
-    <td class="value">7</td>
+    <td ><app-active-player-button color={{colors[2]}}></app-active-player-button></td>
+    <td class="value">{{values[2]}}</td>
   </tr>
   <tr class="blank">
     <td> </td>
     <td></td>
   </tr>
   <tr class="resource">
-    <td ><app-active-player-button color="lightgreen" height="20px"></app-active-player-button></td>
-    <td></td>
+    <td ><app-active-player-button color={{colors[3]}} height="20px"></app-active-player-button></td>
+    <td class="value">{{values[3]}}</td>
   </tr>
   <tr class="resource">
-    <td ><app-active-player-button color="lightblue" height="20px"></app-active-player-button></td>
-    <td></td>
+    <td ><app-active-player-button color={{colors[4]}} height="20px"></app-active-player-button></td>
+    <td class="value">{{values[4]}}</td>
   </tr>
   <tr class="resource">
-    <td ><app-active-player-button color="blue" height="20px"></app-active-player-button></td>
-    <td></td>
+    <td ><app-active-player-button color={{colors[5]}} height="20px"></app-active-player-button></td>
+    <td class="value">{{values[5]}}</td>
   </tr>
   <tr class="resource">
-    <td ><app-active-player-button color="violet" height="20px"></app-active-player-button></td>
-    <td></td>
+    <td><app-active-player-button color={{colors[6]}} height="20px"></app-active-player-button></td>
+    <td class="value">{{values[6]}}</td>
   </tr>
   <tr class="blank">
     <td></td>

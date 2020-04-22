@@ -11,6 +11,8 @@ export class PlayerDashboardComponent implements OnInit {
  private _model : Player;
 
  name : String = 'PlayerOne';
+ archname : String = 'archType';
+ archcolor : string = "#fff";
  color : String ='#fff';
  resources : number[] = [0,0,0,0,0,0,0];
  gold : number = 0;
@@ -45,6 +47,8 @@ export class PlayerDashboardComponent implements OnInit {
 
     this.name = this._model.name;
     this.color = this._model.color;
+    this.archname = this._model.archType.name;
+    this.archcolor = this._model.archType.isShadow ? '#666' : "#fff"
 
     this.gold = this._model.gold;
     this.silver = this._model.silver;

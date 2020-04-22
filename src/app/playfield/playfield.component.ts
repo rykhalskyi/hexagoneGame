@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Hexagon } from '../hexagon';
-import { HexagonComponent } from '../hexagon/hexagon.component';
 import { PlayfieldService } from '../playfield.service';
 import { HexagonSectorClickArgs } from '../HexagonSectorClickArgs';
 
