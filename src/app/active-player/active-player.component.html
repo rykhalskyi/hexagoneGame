@@ -1,6 +1,7 @@
 <table style="display : {{visibility}}">
   <tr class="resource">
-    <td [ngStyle]="{'background': '#ccc'}" align="center" colspan="2">Jaro </td>
+    <td [ngStyle]="{'background': '#ccc', 'min-width' : '100px'}" align="center">{{player.name}}</td>
+    <td [ngStyle]="{'background': '#ccc', 'min-width' : '100px'}" align="center">{{player.archType.name}} </td>
   </tr>
   <tr class="blank">
     <td></td>
@@ -43,15 +44,15 @@
   </tr>
   <tr class="keyresource">
     <td> <app-active-player-button color="orange" radius="50%"></app-active-player-button></td>
-    <td></td>
+    <td class="value">{{player.gold}}</td>
   </tr>
   <tr class="keyresource">
     <td> <app-active-player-button color="lightgray" radius="50%"></app-active-player-button></td>
-    <td></td>
+    <td class="value">{{player.silver}}</td>
   </tr>
   <tr class="keyresource">
     <td> <app-active-player-button color="#634c00" radius="50%"></app-active-player-button></td>
-    <td></td>
+    <td class="value">{{player.bronze}}</td>
   </tr>
 
 </table>

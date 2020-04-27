@@ -16,7 +16,7 @@ export class ActivePlayerComponent implements OnInit {
   colors : string[];
   values : number[];
 
-  private _player : Player;
+  player : Player;
 
   ngOnInit(): void {
     this.service.getActivePlayer().subscribe(player => this.UpdatePlayer(player));
@@ -24,12 +24,12 @@ export class ActivePlayerComponent implements OnInit {
 
   UpdatePlayer(player : Player)
   {
-    this._player = player;
-    this.visibility = this._player == null ? 'none' : 'block';
+    this.player = player;
+    this.visibility = this.player == null ? 'none' : 'block';
 
-    if (this._player != null)
+    if (this.player != null)
     {
-      this.SortAndFillArrays(this._player);
+      this.SortAndFillArrays(this.player);
     }
   }
 
@@ -41,7 +41,6 @@ export class ActivePlayerComponent implements OnInit {
       player.archType.resourcesSorted.forEach(element => {
         this.colors.push(ResourceColors[element]);
         this.values.push(player.resources[element]);
-        console.log("*** "+ResourceColors[element] + "**" +player.resources[element]);
       });
   }
 }
