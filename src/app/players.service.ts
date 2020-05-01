@@ -47,8 +47,8 @@ export class PlayersService {
     return of([this.playerOne, this.playerTwo, this.playerThree, this.playerFour]);
   }
 
-  getActivePlayer():Observable<Player>
+  getActivePlayer():Observable<[Player, number]>
   {
-    return of(this.playerOne);
+    return of([this.playerOne, 9]);
   }
 }

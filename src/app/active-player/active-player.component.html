@@ -1,58 +1,59 @@
 <table style="display : {{visibility}}">
   <tr class="resource">
     <td [ngStyle]="{'background': '#ccc', 'min-width' : '100px'}" align="center">{{player.name}}</td>
-    <td [ngStyle]="{'background': '#ccc', 'min-width' : '100px'}" align="center">{{player.archType.name}} </td>
+    <td [ngStyle]="{'background': '#ccc', 'min-width' : '100px'}" align="center" colspan="2">{{player.archType.name}} </td>
   </tr>
   <tr class="blank">
-    <td></td>
-    <td></td>
+    <td colspan="3"></td>
   </tr>
   <tr class="keyresource">
-    <td> <app-active-player-button color={{colors[0]}}></app-active-player-button></td>
+    <td class="icon"> <app-active-player-button color={{colors[0]}} selected="{{selected == 0}}"></app-active-player-button></td>
     <td class="value">{{values[0]}}</td>
   </tr>
   <tr class="keyresource">
-    <td ><app-active-player-button color={{colors[1]}}></app-active-player-button></td>
+    <td class="icon"><app-active-player-button color={{colors[1]}}  selected="{{selected == 1}}"></app-active-player-button></td>
     <td class="value">{{values[1]}}</td>
   </tr>
   <tr class="keyresource">
-    <td ><app-active-player-button color={{colors[2]}}></app-active-player-button></td>
+    <td class="icon"><app-active-player-button color={{colors[2]}}  selected="{{selected == 2}}"></app-active-player-button></td>
     <td class="value">{{values[2]}}</td>
   </tr>
   <tr class="blank">
-    <td> </td>
-    <td></td>
+    <td colspan="3"> </td>
   </tr>
   <tr class="resource">
-    <td ><app-active-player-button color={{colors[3]}} height="20px"></app-active-player-button></td>
+    <td ><app-active-player-button color={{colors[3]}} height="20px" selected="{{selected == 3}}"></app-active-player-button></td>
     <td class="value">{{values[3]}}</td>
   </tr>
   <tr class="resource">
-    <td ><app-active-player-button color={{colors[4]}} height="20px"></app-active-player-button></td>
+    <td ><app-active-player-button color={{colors[4]}} height="20px" selected="{{selected == 4}}"></app-active-player-button></td>
     <td class="value">{{values[4]}}</td>
   </tr>
   <tr class="resource">
-    <td ><app-active-player-button color={{colors[5]}} height="20px"></app-active-player-button></td>
+    <td ><app-active-player-button color={{colors[5]}} height="20px" selected="{{selected == 5}}"></app-active-player-button></td>
     <td class="value">{{values[5]}}</td>
   </tr>
   <tr class="resource">
-    <td><app-active-player-button color={{colors[6]}} height="20px"></app-active-player-button></td>
+    <td><app-active-player-button color={{colors[6]}} height="20px" selected="{{selected == 6}}"></app-active-player-button></td>
     <td class="value">{{values[6]}}</td>
   </tr>
   <tr class="blank">
-    <td></td>
+    <td colspan="3"></td>
   </tr>
   <tr class="keyresource">
-    <td> <app-active-player-button color="orange" radius="50%"></app-active-player-button></td>
+    <td class="coin"> <app-active-player-button color="orange" radius="50%" selected="{{selected == 7}}"></app-active-player-button></td>
     <td class="value">{{player.gold}}</td>
+    <td class="plustd">+</td>
   </tr>
   <tr class="keyresource">
-    <td> <app-active-player-button color="lightgray" radius="50%"></app-active-player-button></td>
+    <td class="coin"> <app-active-player-button color="lightgray" radius="50%" selected="{{selected == 8}}"></app-active-player-button></td>
     <td class="value">{{player.silver}}</td>
+    <td class="plustd">+</td>
   </tr>
   <tr class="keyresource">
-    <td> <app-active-player-button color="#634c00" radius="50%"></app-active-player-button></td>
+    <td class="coin"> <app-active-player-button color="#634c00" radius="50%" selected="{{selected == 9}}"></app-active-player-button></td>
     <td class="value">{{player.bronze}}</td>
+    <td class="plustd">+</td>
   </tr>
 
 </table>

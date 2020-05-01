@@ -8,12 +8,12 @@ table {
 }
 
 td {
-  width: 40px;
+  width: 35px;
   vertical-align: top;
 }
 
 .keyresource {
-  height: 40px;
+  height: 38px;
 }
 
 .resource {
@@ -22,11 +22,40 @@ td {
 
 
 .blank {
-  height: 15px;
+  height: 10px;
 }
 
 .value{
   vertical-align: middle;
   color: white;
   text-align: center;
+  column-span: 2;
+}
+
+.plustd {
+  width: 20px;
+  color: white;
+  vertical-align: middle;
+}
+
+.plustd {
+  width: 10px;
+  text-align: center
+}
+
+.plustd:hover {
+  background-color: #666;
+}
+
+.plustd:active {
+  background-color: #999;
+}
+
+.icon {
+  height: 41px;
+}
+
+.coin
+{
+  height: 42px;
 }

@@ -18,18 +18,21 @@ export class ActivePlayerComponent implements OnInit {
 
   player : Player;
 
+  selected : number = -1;
+
   ngOnInit(): void {
-    this.service.getActivePlayer().subscribe(player => this.UpdatePlayer(player));
+    this.service.getActivePlayer().subscribe(result => this.UpdatePlayer(result));
   }
 
-  UpdatePlayer(player : Player)
+  UpdatePlayer(result : [Player, number])
   {
-    this.player = player;
+    this.player = result[0];
     this.visibility = this.player == null ? 'none' : 'block';
 
     if (this.player != null)
     {
       this.SortAndFillArrays(this.player);
+      this.selected = result[1];
     }
   }
 

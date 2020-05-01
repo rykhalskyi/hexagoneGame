@@ -10,6 +10,14 @@ export class ActivePlayerButtonComponent implements OnInit {
   @Input() color: string  = 'blue';
   @Input() height: string = '40px';
   @Input() radius: string = '12%';
+  @Input("selected")
+  set selected(value: string)
+  {
+    this.bordercolor = value == 'true' ? "white" : "transparent";
+    console.log(">>" + this.color + " " + value + " " +this.bordercolor);
+  }
+
+  bordercolor: string = "transparent";
 
   @Output() buttonclick : EventEmitter<any> = new EventEmitter();
 
