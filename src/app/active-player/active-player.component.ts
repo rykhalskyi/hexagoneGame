@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Resource, ResourceColors } from '../resource';
 import { Player } from '../player';
 import { PlayersService } from '../players.service';
+import { MessagesService } from '../messages.service';
 
 @Component({
   selector: 'app-active-player',
@@ -10,7 +11,7 @@ import { PlayersService } from '../players.service';
 })
 export class ActivePlayerComponent implements OnInit {
 
-  constructor(private service : PlayersService) { }
+  constructor(private service : PlayersService, private messagesSerice: MessagesService) { }
 
   visibility : string = "block";
   colors : string[];
@@ -45,5 +46,10 @@ export class ActivePlayerComponent implements OnInit {
         this.colors.push(ResourceColors[element]);
         this.values.push(player.resources[element]);
       });
+  }
+
+  onButtonCLick(value)
+  {
+     this.messagesSerice.add("AP Click resource"+value)
   }
 }

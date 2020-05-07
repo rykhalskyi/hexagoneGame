@@ -9,6 +9,7 @@ import { PlayerDashboardComponent } from './player-dashboard/player-dashboard.co
 import { PlayersComponent } from './players/players.component';
 import { ActivePlayerComponent } from './active-player/active-player.component';
 import { ActivePlayerButtonComponent } from './active-player-button/active-player-button.component';
+import { GameControlComponent } from './game-control/game-control.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ActivePlayerButtonComponent } from './active-player-button/active-playe
     PlayerDashboardComponent,
     PlayersComponent,
     ActivePlayerComponent,
-    ActivePlayerButtonComponent
+    ActivePlayerButtonComponent,
+    GameControlComponent
   ],
   imports: [
     BrowserModule,

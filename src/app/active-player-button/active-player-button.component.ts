@@ -27,6 +27,6 @@ export class ActivePlayerButtonComponent implements OnInit {
   }
 
   onMouseUp() : void{
-    this.buttonclick.emit(this.color);
+       this.buttonclick.emit(this.color);
   }
 }
