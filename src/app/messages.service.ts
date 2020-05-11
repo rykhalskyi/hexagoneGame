@@ -14,7 +14,7 @@ export class MessagesService {
     let now = new Date();
     let formattedMessage = now.toLocaleTimeString() + " >> " + message;
 
-    this.messages.push(formattedMessage);
+    this.messages.unshift(formattedMessage);
   }
 
   clear() {
