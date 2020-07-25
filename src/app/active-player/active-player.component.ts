@@ -3,6 +3,7 @@ import { Resource, ResourceColors } from '../resource';
 import { Player } from '../player';
 import { PlayersService } from '../players.service';
 import { MessagesService } from '../messages.service';
+import { ActivePlayer } from '../activeplayer';
 
 @Component({
   selector: 'app-active-player',
@@ -25,15 +26,16 @@ export class ActivePlayerComponent implements OnInit {
     this.service.getActivePlayer().subscribe(result => this.UpdatePlayer(result));
   }
 
-  UpdatePlayer(result : [Player, number])
+  UpdatePlayer(result : ActivePlayer)
   {
-    this.player = result[0];
+    this.player = result.player;
     this.visibility = this.player == null ? 'none' : 'block';
 
     if (this.player != null)
     {
       this.SortAndFillArrays(this.player);
-      this.selected = result[1];
+      console.log("!!!!" + result.selectedResource);
+      this.selected = result.selectedResource;
     }
   }
 

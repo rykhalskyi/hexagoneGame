@@ -23,5 +23,12 @@ namespace Game.players
       var result = await _mediator.Send(new GetAllPlayersQuery());
       return result;
     }
+
+    [HttpGet("active")]
+    public async Task<ActionResult<ActivePlayer.ActivePlayer>> GetActivePlayer()
+    {
+      var result = await _mediator.Send(new GetActivePlayerQuery());
+      return result;
+    }
   }
 }

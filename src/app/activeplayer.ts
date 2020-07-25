@@ -1,4 +1,5 @@
 import { Resource } from './resource';
+import { Player } from './player';
 
 export interface ActivePlayerResource {
   resource : Resource;
@@ -8,8 +9,7 @@ export interface ActivePlayerResource {
 
 export interface ActivePlayer
 {
-  name : string;
-  resources : ActivePlayerResource[];
+  player : Player;
   selectedResource : number;
 }
 

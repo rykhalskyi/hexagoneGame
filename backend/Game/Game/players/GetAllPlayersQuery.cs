@@ -28,7 +28,7 @@ namespace Game.players
        var player1 = new Player()
        {
          Id = 0,
-         Name = "Jaro",
+         Name = "Anna",
          ArchType = ArchTypes.Prince,
          Color = "#ccc",
          Resources = new List<int>(new []{1,2,3,4,5,6,7}),
@@ -52,7 +52,7 @@ namespace Game.players
        var player3 = new Player()
        {
          Id = 0,
-         Name = "Jaro",
+         Name = "Ivan",
          ArchType = ArchTypes.Warrior,
          Color = "#ccc",
          Resources = new List<int>(new[] { 1, 2, 3, 4, 5, 6, 7 }),
@@ -64,7 +64,7 @@ namespace Game.players
        var player4= new Player()
        {
          Id = 0,
-         Name = "Jaro",
+         Name = "Maria",
          ArchType = ArchTypes.Lord,
          Color = "#ccc",
          Resources = new List<int>(new[] { 1, 2, 3, 4, 5, 6, 7 }),
