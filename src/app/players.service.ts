@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Player } from './player';
 import { Observable, of } from 'rxjs';
 import { Cannibal, Trickster, Vagabond, Prince, Sorcerer } from './archtype';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MessagesService } from './messages.service';
 
 @Injectable({
   providedIn: 'root'
@@ -50,11 +52,20 @@ export class PlayersService {
 
   private _players = [this.playerOne, this.playerTwo, this.playerThree, this.playerFour];
 
-  constructor() { }
+  private url = 'http://localhost:61958/players';
+
+  constructor(private http:HttpClient, private messagesService: MessagesService) { }
+
+  // getPlayers() : Observable<Player[]>
+  // {
+  //   return of([this.playerOne, this.playerTwo, this.playerThree, this.playerFour]);
+  // }
 
   getPlayers() : Observable<Player[]>
   {
-    return of([this.playerOne, this.playerTwo, this.playerThree, this.playerFour]);
+    this.messagesService.add("get players");
+    console.log("Get Players");
+    return this.http.get<Player[]>(this.url,{headers:{"Access-Control-Allow-Origin" : "http://localhost:4200"}});
   }
 
   getActivePlayer():Observable<[Player, number]>

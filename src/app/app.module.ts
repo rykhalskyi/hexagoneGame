@@ -10,6 +10,9 @@ import { PlayersComponent } from './players/players.component';
 import { ActivePlayerComponent } from './active-player/active-player.component';
 import { ActivePlayerButtonComponent } from './active-player-button/active-player-button.component';
 import { GameControlComponent } from './game-control/game-control.component';
+import { DiceThrowComponent } from './dice-throw/dice-throw.component';
+
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,13 @@ import { GameControlComponent } from './game-control/game-control.component';
     PlayersComponent,
     ActivePlayerComponent,
     ActivePlayerButtonComponent,
-    GameControlComponent
+    GameControlComponent,
+    DiceThrowComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
