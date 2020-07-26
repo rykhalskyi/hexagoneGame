@@ -9,7 +9,7 @@ namespace Game.players
 {
   public class GetAllPlayersQuery : IRequest<ActionResult<IList<Player>>>
   {
-    public Guid UserId { get; set; }
+    public Guid GameId { get; set; }
   }
 
   public class GetAllPlayersQueryHandler : IRequestHandler<GetAllPlayersQuery, ActionResult<IList<Player>>>

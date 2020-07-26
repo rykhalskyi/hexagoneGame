@@ -11,6 +11,7 @@ namespace Game.players
 {
   public class GetActivePlayerQuery : IRequest<ActionResult<ActivePlayer.ActivePlayer>>
   {
+    public Guid GameId { get; set; }
   }
 
   public class GetActivePlayersQueryHandler : IRequestHandler<GetActivePlayerQuery, ActionResult<ActivePlayer.ActivePlayer>>

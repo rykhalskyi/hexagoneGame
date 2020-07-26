@@ -73,7 +73,7 @@ namespace Game
 
         private void ConfigureCustomServices(IServiceCollection services)
         {
-          services.AddScoped<IActivePlayerService, ActivePlayerService>();
+          services.AddSingleton<IActivePlayerService, ActivePlayerService>();
         }
     }
 }
