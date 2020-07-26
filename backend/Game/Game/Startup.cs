@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Game.Game;
 using Game.players.ActivePlayer;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -73,7 +74,8 @@ namespace Game
 
         private void ConfigureCustomServices(IServiceCollection services)
         {
-          services.AddSingleton<IActivePlayerService, ActivePlayerService>();
+          services.AddSingleton<IGameService, StubGameService>();
+         
         }
     }
 }

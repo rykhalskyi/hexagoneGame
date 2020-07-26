@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Game.Controllers;
+using Game.Utils;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,12 @@ namespace Game.Game
     public async Task<ActionResult<string>> GetNewGame()
     {
       return await _mediator.Send(new GetNewGameQuery());
+    }
+
+    [HttpGet("move")]
+    public async Task<ActionResult<Status>> NextMove()
+    {
+      return await _mediator.Send(new GetNextMoveQuery()); //Add parameter
     }
   }
 }

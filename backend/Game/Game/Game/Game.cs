@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Game.players;
+using Game.Utils;
 
 namespace Game.Game
 {
@@ -47,5 +48,9 @@ namespace Game.Game
       return result;
     }
 
+    public Status NextMove()
+    {
+      return new Status(true, "Next Move");
+    }
   }
 }

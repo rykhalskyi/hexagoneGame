@@ -6,7 +6,7 @@ using Game.players;
 
 namespace Game.Game
 {
-  interface IGameService
+  public interface IGameService
   {
     Game NewGame();
     Game GetGame(Guid id);
