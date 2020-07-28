@@ -5,6 +5,7 @@ import { Cannibal, Trickster, Vagabond, Prince, Sorcerer } from './archtype';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MessagesService } from './messages.service';
 import { ActivePlayer } from './activeplayer';
+import {Message} from './message'
 
 @Injectable({
   providedIn: 'root'
@@ -62,10 +63,10 @@ export class PlayersService {
   //   return of([this.playerOne, this.playerTwo, this.playerThree, this.playerFour]);
   // }
 
-  getPlayers() : Observable<Player[]>
+  getPlayers() : Observable<Message>
   {
     this.messagesService.add("get players");
-    return this.http.get<Player[]>(this.url);
+    return this.http.get<Message>(this.url);
   }
 
   // getActivePlayer():Observable<[Player, number]>
@@ -74,10 +75,12 @@ export class PlayersService {
   // }
 
 
-  getActivePlayer():Observable<ActivePlayer>
+  getActivePlayer():Observable<Message>
   {
     this.messagesService.add("get active player");
-    return this.http.get<ActivePlayer>(this.url+"/active");
+    var message = this.http.get<Message>(this.url+"/active");
+
+    return message;
   }
 
   setActivePlayer(playerId : number, selectedResource : number )

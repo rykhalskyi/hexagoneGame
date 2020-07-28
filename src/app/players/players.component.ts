@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Player} from '../player';
 import { PlayersService } from '../players.service';
+import {Message} from '../message';
 
 @Component({
   selector: 'app-players',
@@ -14,7 +15,15 @@ export class PlayersComponent implements OnInit {
   players : Player[];
 
   ngOnInit(): void {
-    this.playersService.getPlayers().subscribe(players => this.players = players);
+    this.playersService.getPlayers().subscribe(players => this.setPlayers(players));
+  }
+
+  setPlayers(message : Message)
+  {
+    if (!message.status.success)
+     return;
+
+     this.players = message.payload;
   }
 
 }

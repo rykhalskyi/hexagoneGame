@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Game.Controllers;
+using Game.Utils;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,14 +19,14 @@ namespace Game.players
      }
 
     [HttpGet]
-    public async Task<ActionResult<IList<Player>>> GetAllPlayers()
+    public async Task<ActionResult<Message>> GetAllPlayers()
     {
       var result = await _mediator.Send(new GetAllPlayersQuery());
       return result;
     }
 
     [HttpGet("active")]
-    public async Task<ActionResult<ActivePlayer.ActivePlayer>> GetActivePlayer()
+    public async Task<ActionResult<Message>> GetActivePlayer()
     {
       var result = await _mediator.Send(new GetActivePlayerQuery());
       return result;

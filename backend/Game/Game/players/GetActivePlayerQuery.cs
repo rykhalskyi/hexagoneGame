@@ -5,17 +5,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using Game.Game;
 using Game.players.ActivePlayer;
+using Game.Utils;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Game.players
 {
-  public class GetActivePlayerQuery : IRequest<ActionResult<ActivePlayer.ActivePlayer>>
+  public class GetActivePlayerQuery : IRequest<ActionResult<Message>>
   {
     public Guid GameId { get; set; }
   }
 
-  public class GetActivePlayersQueryHandler : IRequestHandler<GetActivePlayerQuery, ActionResult<ActivePlayer.ActivePlayer>>
+  public class GetActivePlayersQueryHandler : IRequestHandler<GetActivePlayerQuery, ActionResult<Message>>
   {
     private readonly IGameService _gameService;
 
@@ -24,22 +25,30 @@ namespace Game.players
       _gameService = gameService;
     }
 
-    public async Task<ActionResult<ActivePlayer.ActivePlayer>> Handle(GetActivePlayerQuery request, CancellationToken cancellationToken)
+    public async Task<ActionResult<Message>> Handle(GetActivePlayerQuery request, CancellationToken cancellationToken)
     {
       var game = _gameService.GetGame(request.GameId);
 
       if (game == null)
       {
-          //TODO: Make error handling
+         return new Message()
+         {
+           Status = new Status(false, 1, $"Game {request.GameId} was not found"),
+           Payload = new Player()
+         };
       }
 
-      var result = new ActivePlayer.ActivePlayer()
+      var player = new ActivePlayer.ActivePlayer()
       {
         Player = game.ActivePlayer,
         SelectedResource = 8
       };
 
-      return result;
+      return new Message()
+      {
+        Status = new Status(true, "OK"),
+        Payload = player
+      };
     }
 
    

@@ -4,6 +4,7 @@ import { Player } from '../player';
 import { PlayersService } from '../players.service';
 import { MessagesService } from '../messages.service';
 import { ActivePlayer } from '../activeplayer';
+import {Message} from '../message';
 
 @Component({
   selector: 'app-active-player',
@@ -26,16 +27,22 @@ export class ActivePlayerComponent implements OnInit {
     this.service.getActivePlayer().subscribe(result => this.UpdatePlayer(result));
   }
 
-  UpdatePlayer(result : ActivePlayer)
+  UpdatePlayer(result : Message)
   {
-    this.player = result.player;
+    if (!result.status.success)
+      {
+        this.messagesSerice.add("Active player fetching error" + result.status.message);
+        return;
+      }
+
+    this.player = result.payload.player;
     this.visibility = this.player == null ? 'none' : 'block';
 
     if (this.player != null)
     {
       this.SortAndFillArrays(this.player);
-      console.log("!!!!" + result.selectedResource);
-      this.selected = result.selectedResource;
+      console.log("!!!!" + result.payload.selectedResource);
+      this.selected = result.payload.selectedResource;
     }
   }
 
