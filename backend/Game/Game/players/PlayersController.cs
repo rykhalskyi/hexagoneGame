@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -19,9 +20,11 @@ namespace Game.players
      }
 
     [HttpGet]
-    public async Task<ActionResult<Message>> GetAllPlayers()
+    public async Task<ActionResult<Message>> GetAllPlayers(string gameIdString)
     {
-      var result = await _mediator.Send(new GetAllPlayersQuery());
+      var gameId = Guid.Parse(gameIdString);
+      var result = await _mediator.Send(new GetAllPlayersQuery()
+      { GameId = gameId});
       return result;
     }
 

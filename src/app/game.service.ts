@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MessagesService } from './messages.service';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +14,19 @@ export class GameService {
   private url = 'http://localhost:61958/game';
   _gameId = "";
 
-  getGameId() : string
+  getGameId() : Observable<string>
   {
-    return this._gameId;
+    console.log("Get game id");
+      if (this._gameId === "")
+      {
+        
+        return this.http.get<string>(this.url).pipe(
+            tap(r=>this.messagesService.add("Got "+ r),
+            tap(r=>this._gameId = r as string)
+          ))
+      }
+
+    return of(this._gameId);  
   }
 
   getGameIdFromServer()
