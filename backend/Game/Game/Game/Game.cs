@@ -17,7 +17,7 @@ namespace Game.Game
     }
     public Guid Id { get; }
     public Player ActivePlayer => Players[_currentPlayer];
-    public List<Player> Players { get; }
+    public List<Player> Players { get; } = new List<Player>();
 
     public void AppendPlayer(Player player)
     {

@@ -7,6 +7,8 @@ import { MessagesService } from './messages.service';
 import { ActivePlayer } from './activeplayer';
 import {Message} from './message'
 import { GameService } from './game.service';
+import { mergeMap } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,34 +21,25 @@ export class PlayersService {
     private gameService:GameService,
     private messagesService: MessagesService) { }
 
-  // getPlayers() : Observable<Player[]>
-  // {
-  //   return of([this.playerOne, this.playerTwo, this.playerThree, this.playerFour]);
-  // }
 
-  async getPlayers() : Promise<Message>
+   getPlayers() : Observable<Message>
   {
+    console.log("getPlayers");
 
-    var gameId = await this.gameService.getGameId().toPromise();
-    return this.http.get<Message>(this.url).toPromise();
+    //TODO: Error handling logic
+    return this.gameService.getGameId().pipe(
+      mergeMap(id=>this.http.get<Message>(this.url, {params: {"gameid":id.payload}}))
+    );
   }
-
-  // getActivePlayer():Observable<[Player, number]>
-  // {
-  //   return of([this.playerOne, 9]);
-  // }
-
 
   getActivePlayer():Observable<Message>
   {
+    //Redo this to use gameID
+
     this.messagesService.add("get active player");
     var message = this.http.get<Message>(this.url+"/active");
 
     return message;
   }
 
-  setActivePlayer(playerId : number, selectedResource : number )
-  {
-
-  }
 }

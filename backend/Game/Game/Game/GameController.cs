@@ -19,7 +19,7 @@ namespace Game.Game
     }
 
     [HttpGet]
-    public async Task<ActionResult<string>> GetNewGame()
+    public async Task<ActionResult<Message>> GetNewGame()
     {
       return await _mediator.Send(new GetNewGameQuery());
     }

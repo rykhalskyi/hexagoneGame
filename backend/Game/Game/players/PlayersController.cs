@@ -20,11 +20,11 @@ namespace Game.players
      }
 
     [HttpGet]
-    public async Task<ActionResult<Message>> GetAllPlayers(string gameIdString)
+    public async Task<ActionResult<Message>> GetAllPlayers(string gameId)
     {
-      var gameId = Guid.Parse(gameIdString);
+      var gameIdGuid = Guid.Parse(gameId);
       var result = await _mediator.Send(new GetAllPlayersQuery()
-      { GameId = gameId});
+      { GameId = gameIdGuid });
       return result;
     }
 

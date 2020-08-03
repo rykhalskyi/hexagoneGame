@@ -23,7 +23,8 @@ export class PlayersComponent implements OnInit {
     if (!message.status.success)
      return;
 
-     this.players = message.payload;
+    this.players = message.payload;
+
   }
 
 }
