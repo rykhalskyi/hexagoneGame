@@ -29,9 +29,9 @@ namespace Game.players
     }
 
     [HttpGet("active")]
-    public async Task<ActionResult<Message>> GetActivePlayer()
+    public async Task<ActionResult<Message>> GetActivePlayer(string gameId)
     {
-      var result = await _mediator.Send(new GetActivePlayerQuery());
+      var result = await _mediator.Send(new GetActivePlayerQuery() {GameId = Guid.Parse(gameId) });
       return result;
     }
   }

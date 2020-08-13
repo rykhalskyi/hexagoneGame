@@ -28,7 +28,9 @@ export class PlayersService {
 
     //TODO: Error handling logic
     return this.gameService.getGameId().pipe(
-      mergeMap(id=>this.http.get<Message>(this.url, {params: {"gameid":id.payload}}))
+  //    mergeMap(id=>this.http.get<Message>(this.url, {params: {"gameid":id}}))
+  mergeMap(id=>this.http.get<Message>(this.url, {"params": {"gameid":id}}))
+    
     );
   }
 
@@ -37,9 +39,10 @@ export class PlayersService {
     //Redo this to use gameID
 
     this.messagesService.add("get active player");
-    var message = this.http.get<Message>(this.url+"/active");
-
-    return message;
+    return this.gameService.getGameId().pipe(
+      mergeMap(id=>this.http.get<Message>(this.url+"/active", {"params": {"gameid":id}}))
+    )
+    
   }
 
 }
